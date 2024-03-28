@@ -9,10 +9,38 @@ Tutorial: https://www.youtube.com/watch?v=zxxB9SFh9p4
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namora comigo?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #ff7a7a; /* Define a cor de fundo para o corpo */
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .ascii-art {
+            margin: 20px auto;
+            overflow-x: auto; /* Adicione esta linha para permitir rolagem horizontal */
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container" id="conteudo">
+    <div class="container">
         <h2>Aceita namorar comigo, Duda?</h2>
         <p>Tudo bem? Desde o momento que eu te vi, tive certeza de que você é o amor da minha vida.
             Desde que olhei em seus olhos, tive certeza de que são eles que eu quero olhar até o fim dos meus dias.
@@ -114,55 +142,25 @@ Tutorial: https://www.youtube.com/watch?v=zxxB9SFh9p4
             <button class="btn" onclick="desvia(this)">NÃO</button>
         </div>
     </div>
+
+    <script>
+        function sim() {
+            alert("Você aceitou namorar comigo! :)");
+            // redireciona para um URL após clicar no SIM
+            location.href = "https://music.youtube.com/watch?v=k7pr4VTk5cQ";
+        }
+
+        function desvia(btn) {
+            btn.style.position = 'absolute';
+            btn.style.bottom = geraPosicao(10, 90);
+            btn.style.left = geraPosicao(10, 90);
+            console.log('opa, desviei...');
+        }
+
+        function geraPosicao(min, max) {
+            return (Math.random() * (max - min) + min) + "%";
+        }
+    </script>
 </body>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-        background-color: #ff7a7a; /* Define a cor de fundo para a viewport */
-    }
-
-    #conteudo {
-        padding: 20px;
-        text-align: center;
-        min-height: 100vh; /* Define a altura mínima para ocupar toda a viewport */
-    }
-
-    .btn {
-        background: black;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin: 5px;
-        cursor: pointer;
-    }
-
-    .ascii-art {
-        margin: 20px auto;
-        overflow-x: auto; /* Adicione esta linha para permitir rolagem horizontal */
-    }
-</style>
-
-<script>
-    function sim() {
-        alert("Você aceitou namorar comigo! :)");
-        // redireciona para um URL após clicar no SIM
-        location.href = "https://music.youtube.com/watch?v=k7pr4VTk5cQ";
-    }
-
-    function desvia(btn) {
-        btn.style.position = 'absolute';
-        btn.style.bottom = geraPosicao(10, 90);
-        btn.style.left = geraPosicao(10, 90);
-        console.log('opa, desviei...');
-    }
-
-    function geraPosicao(min, max) {
-        return (Math.random() * (max - min) + min) + "%";
-    }
-
-</script>
 
 </html>
